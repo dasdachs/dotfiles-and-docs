@@ -1,0 +1,9 @@
+# I have this in my .config folders on *nix systems, so most directories are excluded
+**/
+.DS_Store
+
+# Included
+!nvim
+!i3
+!polybar
+
