@@ -1,0 +1,5 @@
+# Stow
+.config/nvim/plugin
+
+# Misc 
+.DS_Store

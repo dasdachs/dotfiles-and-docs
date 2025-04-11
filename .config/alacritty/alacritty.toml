@@ -1,0 +1,38 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+startup_mode = "Windowed"
+dynamic_padding = true
+opacity = 0.92
+
+[window.padding]
+x = 2
+y = 2
+
+[cursor.style]
+shape = "Block"
+
+[mouse]
+hide_when_typing = true
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Thin"
+
+[general]
+live_config_reload = true
+import = [
+  "~/.config/alacritty/themes/kanagawa-wave.toml"
+]
