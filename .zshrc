@@ -43,6 +43,7 @@ alias cat=bat
 alias k=kubectl
 alias pbcopy=wl-copy
 alias pbpaste=wl-paste
+alias stow=stow --ignore=".gitignore"
 
 # asdf
 export PATH="$HOME/.asdf/shims:$PATH"
