@@ -104,16 +104,6 @@ return require('packer').startup(function(use)
       'theHamsta/nvim-dap-virtual-text',
     },
   }
-  -- Language specific adapters (choose what you need)
-
-  -- For Python
-  use 'mfussenegger/nvim-dap-python'
-  -- For JavaScript/TypeScript
-  use { 'mxsdev/nvim-dap-vscode-js', requires = {'mfussenegger/nvim-dap'} }
-  -- For Go
-  use 'leoluz/nvim-dap-go'
-  -- For C/C++/Rust
-  use 'jay-babu/mason-nvim-dap.nvim'
 
   use {
     'stevearc/overseer.nvim',

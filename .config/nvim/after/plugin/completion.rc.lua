@@ -18,7 +18,7 @@ require("codecompanion").setup({
     end,
     deepcoder1_5 = function()
       return require("codecompanion.adapters").extend("ollama", {
-        name = "deepcoder1.5",
+        name = "deepcoder1_5",
         schema = {
           model = {
             default = "deepcoder:1.5b",
