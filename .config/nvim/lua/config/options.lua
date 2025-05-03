@@ -20,9 +20,7 @@ vim.opt.wildmenu = true
 
 -- Line numbers
 vim.opt.nu = true
-
--- Numbers are relative to the current line
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Highlited current line
 vim.opt.cursorline = true
@@ -50,7 +48,7 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
--- Search higlighting
+-- Search 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.o.ignorecase = true
@@ -71,11 +69,8 @@ vim.opt.clipboard:append { 'unnamedplus' }
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
--- Default case-insesitive searching
-vim.opt.ignorecase = true
-
 -- Ignore
-vim.opt.wildignore:append { '*/node_modules/*' }
+vim.opt.wildignore:append { '*/node_modules/*', '.venv', 'venv' }
 
 -- Conceal links
 vim.opt.conceallevel = 2
@@ -83,6 +78,3 @@ vim.opt.concealcursor = 'nc'
 
 -- Mouse mode
 vim.o.mouse = 'a'
-
--- Relative line numbers
-vim.opt.relativenumber = true
