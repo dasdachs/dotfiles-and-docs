@@ -1,5 +1,3 @@
-vim.cmd("autocmd!")
-
 -- Leader
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -39,6 +37,7 @@ vim.opt.smartindent = true
 -- Give more space for displaying messages.
 vim.opt.cmdheight = 1
 
+
 -- Hide unused buffers
 vim.opt.hidden = true
 
@@ -48,16 +47,16 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
--- Search 
+-- Search
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- Folding
-vim.opt.foldmethod = "expr"
-vim.opt.foldtext = "v:lua.vim.treesitter.foldtext()"
-vim.opt.foldnestmax = 3
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldtext = "v:lua.vim.treesitter.foldtext()"
+-- vim.opt.foldnestmax = 3
 
 -- Line mark
 vim.opt.colorcolumn = "120"
@@ -78,3 +77,7 @@ vim.opt.concealcursor = 'nc'
 
 -- Mouse mode
 vim.o.mouse = 'a'
+
+-- Whichkey needs this
+vim.o.timeout = true
+vim.o.timeoutlen = 200

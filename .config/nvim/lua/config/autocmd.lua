@@ -1,3 +1,5 @@
+-- vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
+
 -- Spellcheck for documentation
 vim.api.nvim_create_autocmd(
     { "BufRead", "BufNewFile" },
@@ -11,3 +13,4 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = { "gitcommit", "gitrebase" },
     command = "startinsert | 1",
 })
+

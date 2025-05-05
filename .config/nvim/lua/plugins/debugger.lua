@@ -1,7 +1,7 @@
+require("mason-nvim-dap").setup()
 local dap = require('dap')
 local dapui = require("dapui")
 local utils = require("dap.utils")
-require("mason-nvim-dap").setup()
 
 dapui.setup()
 
