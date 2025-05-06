@@ -1,4 +1,3 @@
--- Functional wrapper for mapping custom keybindings
 function KeyMap(mode, lhs, rhs, opts)
   local options = { noremap = true }
   if opts then
@@ -37,10 +36,13 @@ KeyMap("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
 KeyMap("n", "<leader>d", "vim.diagnostic.open_float()", { desc = "Display diagnostic" })
 
 -- Move selected line
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")     -- move line up(n)
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")     -- move line down(n)
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v)im.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi")
+KeyMap("n", "<A-j>", ":m .+1<CR>==")     -- move line up(n)
+KeyMap("n", "<A-k>", ":m .-2<CR>==")     -- move line down(n)
+KeyMap("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
+KeyMap("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v)im.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi")
 
 -- greatest remap ever: overwrite highlighed line and keep buffer
-vim.keymap.set("x", "<leader>p", [["_dP]])
+KeyMap("x", "<leader>p", [["_dP]])
+
+-- Close active buffer
+KeyMap('n', '<leader>x', '<cmd> bd <CR>')
