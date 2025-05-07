@@ -1,14 +1,11 @@
 local capabilities = require('blink.cmp').get_lsp_capabilities()
 
--- Vim help
-vim.lsp.enable('vimls', { capabilities = capabilities })
-
 -- Lua
 vim.lsp.enable('lua_ls', { capabilities = capabilities })
 
 -- Javascript/typescript
 vim.lsp.enable('ts_ls', { capabilities = capabilities })
-vim.lsp.enable('biome', { capabilities = capabilities })
+vim.lsp.enable('eslint', { capabilities = capabilities })
 
 -- Html & css
 vim.lsp.enable('tailwindcss')

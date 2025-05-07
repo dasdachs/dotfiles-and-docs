@@ -23,7 +23,7 @@ require("blink.cmp").setup {
     }
   },
   sources = {
-    default = { "lazydev", "lsp", "path", "snippets", "spell", "buffer" },
+    default = { "lazydev", "lsp", "path", "codecompanion", "minuet", "snippets", "spell", "buffer" },
     providers = {
       lazydev = {
         name = "LazyDev",
@@ -54,6 +54,18 @@ require("blink.cmp").setup {
             return in_spell_capture
           end,
         },
+      },
+      codecompanion = {
+        name = "CodeCompanion",
+        module = "codecompanion.providers.completion.blink",
+        enabled = true,
+      },
+      minuet = {
+        name = 'minuet',
+        module = 'minuet.blink',
+        async = true,
+        timeout_ms = 3000,
+        score_offset = 50,
       },
     },
   },

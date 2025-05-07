@@ -1,8 +1,8 @@
 return require("lazy").setup {
   -- Enhancments
-  {"mbbill/undotree"},       -- undotree saved
-  {"nvim-lua/plenary.nvim"}, -- Lua extensions
-  {                        -- better sorting with cmdline sort
+  { "mbbill/undotree" },       -- undotree saved
+  { "nvim-lua/plenary.nvim" }, -- Lua extensions
+  {                            -- better sorting with cmdline sort
     "sQVe/sort.nvim",
     config = function()
       require("sort").setup()
@@ -10,12 +10,12 @@ return require("lazy").setup {
   },
   -- UI
   { "norcalli/nvim-colorizer.lua" }, -- fast color support
-  {"rebelot/kanagawa.nvim"},           -- current theme
+  { "rebelot/kanagawa.nvim" },       -- current theme
   {                                  -- lualine
     "nvim-lualine/lualine.nvim",
     config = function() require("plugins.lualine") end
   },
-  {"ryanoasis/vim-devicons"}, -- Devicons for nvim tree or a start page
+  { "ryanoasis/vim-devicons" }, -- Devicons for nvim tree or a start page
   -- Completion
   {
     "saghen/blink.cmp",
@@ -31,8 +31,8 @@ return require("lazy").setup {
     "nvim-telescope/telescope.nvim",
     config = function() require("plugins.telescope") end,
   },
-  {"nvim-telescope/telescope-file-browser.nvim"},
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable "make" == 1 },
+  { "nvim-telescope/telescope-file-browser.nvim" },
+  { "nvim-telescope/telescope-fzf-native.nvim",  build = "make", cond = vim.fn.executable "make" == 1 },
   -- File navigation
   {
     "kyazdani42/nvim-tree.lua",
@@ -94,7 +94,7 @@ return require("lazy").setup {
       }
     end
   },
-  {"folke/lazydev.nvim"},
+  { "folke/lazydev.nvim" },
 
   -- Debugger
   {
@@ -116,8 +116,8 @@ return require("lazy").setup {
   },
 
   -- Git
-  {"tpope/vim-fugitive"}, -- Git integration
-  {                    -- Git "anotations" for blame etc
+  { "tpope/vim-fugitive" }, -- Git integration
+  {                         -- Git "anotations" for blame etc
     "lewis6991/gitsigns.nvim",
     config = function() require("plugins.gitsigns") end
   },
@@ -146,5 +146,11 @@ return require("lazy").setup {
       "nvim-treesitter/nvim-treesitter",
     },
     config = function() require("plugins.llm") end
-  }
+  },
+  {
+    'milanglacier/minuet-ai.nvim',
+    config = function()
+      require('minuet').setup {}
+    end,
+  },
 }

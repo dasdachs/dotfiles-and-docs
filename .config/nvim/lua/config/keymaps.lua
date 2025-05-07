@@ -26,9 +26,6 @@ KeyMap("n", "sv", ":vsplit<Return><C-w>w")
 KeyMap("n", "<C-t>", ":ToggleTerm<CR>")
 KeyMap("t", "<ESC>", "<C-\\><C-N>")
 
--- Nerdtree
-KeyMap("n", "<C-b>", ":NvimTreeToggle<CR>")
-
 -- Outline
 KeyMap("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
 
