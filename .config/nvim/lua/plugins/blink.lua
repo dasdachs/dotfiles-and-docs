@@ -90,4 +90,19 @@ require("blink.cmp").setup {
     },
   },
   signature = { enabled = true },
+  formatting = {
+    format = function(entry, vim_item)
+      local kind_icons = {
+        CodeCompanion = "🧠", -- Custom icon for CodeCompanion
+      }
+
+      local source = entry.source.name
+
+      if kind_icons[source] then
+        vim_item.kind = string.format('%s %s', kind_icons[source], vim_item.kind)
+      end
+
+      return vim_item
+    end,
+  },
 }

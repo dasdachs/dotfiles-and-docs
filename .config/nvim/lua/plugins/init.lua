@@ -140,17 +140,14 @@ return require("lazy").setup {
 
   -- Ai
   {
+    'milanglacier/minuet-ai.nvim',
+  },
+  {
     "olimorris/codecompanion.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
     },
     config = function() require("plugins.llm") end
-  },
-  {
-    'milanglacier/minuet-ai.nvim',
-    config = function()
-      require('minuet').setup {}
-    end,
   },
 }

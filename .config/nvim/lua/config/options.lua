@@ -55,10 +55,10 @@ vim.o.smartcase = true
 
 -- Folding
 vim.opt.foldlevelstart = 99
-vim.opt.foldmethod = "expr"
-vim.opt.foldtext = ""
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldnestmax = 3
+vim.opt.foldmethod = "expr"
+vim.opt.foldtext = "v:lua.vim.treesitter.foldtext()"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 -- Line mark
 vim.opt.colorcolumn = "120"
