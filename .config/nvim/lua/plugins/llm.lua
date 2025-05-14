@@ -5,7 +5,23 @@ require("codecompanion").setup({
         name = "qwen14b",
         schema = {
           model = {
-            default = "qwen2.5-coder:14b-instruct-q4_0",
+            default = "qwen2.5-coder:14b-instruct-q4_K_M",
+          },
+          num_ctx = {
+            default = 16384,
+          },
+          num_predict = {
+            default = -1,
+          },
+        },
+      })
+    end,
+    qwen7b = function()
+      return require("codecompanion.adapters").extend("ollama", {
+        name = "qwen7b",
+        schema = {
+          model = {
+            default = "qwen2.5-coder:14b-instruct-q4_K_M",
           },
           num_ctx = {
             default = 16384,
@@ -54,7 +70,7 @@ require("codecompanion").setup({
       adapter = "deepcoder",
     },
     inline = {
-      adapter = "deepcoder1_5",
+      adapter = "qwen7b",
     },
     opts = {
       -- Set debug logging
@@ -62,3 +78,21 @@ require("codecompanion").setup({
     },
   },
 })
+
+require("minuet").setup {
+  provider = "openai_fim_compatible",
+  n_completions = 1,
+  context_window = 4096,
+  provider_options = {
+    openai_fim_compatible = {
+      api_key = "TERM",
+      name = "Ollama",
+      end_point = "http://localhost:11434/v1/completions",
+      model = "qwen2.5-coder:7b-base-q4_K_M",
+      optional = {
+        max_tokens = 56,
+        top_p = 0.9,
+      },
+    },
+  },
+}
