@@ -48,6 +48,38 @@ require("codecompanion").setup({
         },
       })
     end,
+    codestral = function()
+      return require("codecompanion.adapters").extend("ollama", {
+        name = "codestral",
+        schema = {
+          model = {
+            default = "codestral:22b",
+          },
+          num_ctx = {
+            default = 16384,
+          },
+          num_predict = {
+            default = -1,
+          },
+        },
+      })
+    end,
+    codegemma = function()
+      return require("codecompanion.adapters").extend("ollama", {
+        name = "codegemma",
+        schema = {
+          model = {
+            default = "codegemma:7b",
+          },
+          num_ctx = {
+            default = 16384,
+          },
+          num_predict = {
+            default = -1,
+          },
+        },
+      })
+    end,
     deepcoder = function()
       return require("codecompanion.adapters").extend("ollama", {
         name = "deepcoder",
@@ -67,10 +99,10 @@ require("codecompanion").setup({
   },
   strategies = {
     chat = {
-      adapter = "deepcoder",
+      adapter = "codestral",
     },
     inline = {
-      adapter = "qwen7b",
+      adapter = "qwen14b",
     },
     opts = {
       -- Set debug logging
@@ -88,11 +120,7 @@ require("minuet").setup {
       api_key = "TERM",
       name = "Ollama",
       end_point = "http://localhost:11434/v1/completions",
-      model = "qwen2.5-coder:7b-base-q4_K_M",
-      optional = {
-        max_tokens = 56,
-        top_p = 0.9,
-      },
+      model = "codegemma:7b",
     },
   },
 }

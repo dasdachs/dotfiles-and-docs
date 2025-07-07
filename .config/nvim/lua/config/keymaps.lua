@@ -12,6 +12,9 @@ KeyMap("n", "<C-j>", "<C-W><C-J>")
 KeyMap("n", "<C-k>", "<C-W><C-K>")
 KeyMap("n", "<C-l>", "<C-W><C-L>")
 
+-- Center
+KeyMap("n", "<C-c>", "zz")
+
 -- Resize
 KeyMap("n", "<C-S-Up>", ":resize +2<CR>")
 KeyMap("n", "<C-S-Down>", ":resize -2<CR>")
