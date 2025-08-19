@@ -9,21 +9,19 @@ require('nvim-treesitter.configs').setup {
   },
   ensure_installed = {
     "typescript",
+    "go",
     "tsx",
-    "toml",
-    "bash",
-    "json",
     "yaml",
     "css",
     "html",
-    "cmake",
     "c",
     "vim",
     "lua",
+    "markdown",
   },
   sync_install = false,
-  auto_install = true,
-  ncremental_selection = {
+  auto_install = false,
+  incremental_selection = {
     enable = true,
     keymaps = {
       init_selection = '<c-space>',

@@ -44,7 +44,7 @@ return require("lazy").setup {
   {
     "stevearc/oil.nvim",
     config = function()
-      require("oil").setup()
+      require("plugins.oil")
     end,
   },
 

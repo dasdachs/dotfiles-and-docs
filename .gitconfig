@@ -24,7 +24,7 @@
 	del = branch -D
 	done = push origin HEAD
 [core]
-	excludesfile = $HOME/.config/git-config/gitignore_global
+	excludesFile = ~/.gitignore
 	pager = delta
 	hooksPath = $HOME/.config/git-config/hooks
 	askpass = /usr/bin/ksshaskpass

@@ -14,3 +14,11 @@ vim.api.nvim_create_autocmd("FileType", {
     command = "startinsert | 1",
 })
 
+
+-- Auto generat index.ts files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "typescript", "typescriptreact" },
+  callback = function()
+    vim.api.nvim_buf_create_user_command(0, "GenIndexTS", require("commands.gen-index-ts").generate_index_ts, {})
+  end,
+})
