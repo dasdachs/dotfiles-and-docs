@@ -19,10 +19,16 @@ return require("lazy").setup {
   -- Completion
   {
     "saghen/blink.cmp",
-    version = "1.*",
+    event = "InsertEnter",
+    version = "*",
+    build = "cargo build --release",
     dependencies = {
       "rafamadriz/friendly-snippets",
-      "ribru17/blink-cmp-spell"
+      "ribru17/blink-cmp-spell",
+      "saghen/blink.compat",
+      optional = true, -- make optional so it's only enabled if any extras need it
+      opts = {},
+      version = "*",
     },
     config = function() require("plugins.blink") end
   },
@@ -51,10 +57,7 @@ return require("lazy").setup {
   -- Code highlighting and parsing
   {
     "nvim-treesitter/nvim-treesitter",
-    run = function()
-      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-      ts_update()
-    end,
+    build = ":TSUpdate",
     config = function() require("plugins.treesitter") end
   },
   { -- Additional text objects via treesitter
@@ -71,6 +74,10 @@ return require("lazy").setup {
   { -- Symbol tree outlier
     "hedyhli/outline.nvim",
     config = function() require("plugins.outline") end,
+  },
+  { -- Autoclosing tags
+    "windwp/nvim-ts-autotag",
+    opts = {},
   },
 
   -- Lsp
@@ -117,10 +124,10 @@ return require("lazy").setup {
 
   -- Git
   { "tpope/vim-fugitive" }, -- Git integration
-  {                         -- Git "anotations" for blame etc
-    "lewis6991/gitsigns.nvim",
-    config = function() require("plugins.gitsigns") end
-  },
+  -- {                         -- Git "anotations" for blame etc
+  --   "lewis6991/gitsigns.nvim",
+  --   config = function() require("plugins.gitsigns") end
+  -- },
 
   -- Terminal
   {
@@ -142,14 +149,14 @@ return require("lazy").setup {
   {
     'milanglacier/minuet-ai.nvim',
   },
-  {
-    "olimorris/codecompanion.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = function() require("plugins.llm") end
-  },
+  -- {
+  --   "olimorris/codecompanion.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-treesitter/nvim-treesitter",
+  --   },
+  --   config = function() require("plugins.llm") end
+  -- },
   -- {
   --   "yetone/avante.nvim",
   --   event = "VeryLazy",

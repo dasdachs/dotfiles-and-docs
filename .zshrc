@@ -74,6 +74,10 @@ eval "$(pyenv init - zsh)"
 # k8s
 export KUBECONFIG=/home/janis/.kube/config
 
+# LLMs
+export OLLAMA_API_BASE=http://127.0.0.1:11434
+source ~/.zshrc_keys
+
 # Redis on fedora
 alias redis-cli=valkey-cli
 
