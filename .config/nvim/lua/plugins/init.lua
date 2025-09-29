@@ -102,6 +102,12 @@ return require("lazy").setup {
     end
   },
   { "folke/lazydev.nvim" },
+  {
+    "stevearc/conform.nvim",
+    config = function()
+      require("plugins.formater")
+    end,
+  },
 
   -- Debugger
   {
