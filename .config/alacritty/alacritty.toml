@@ -4,7 +4,7 @@ TERM = "xterm-256color"
 [window]
 startup_mode = "Windowed"
 dynamic_padding = true
-opacity = 0.88
+opacity = 0.9
 
 [window.padding]
 x = 2

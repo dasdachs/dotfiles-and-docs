@@ -3,7 +3,7 @@ require("conform").setup({
 		lua = { "stylua" },
 		python = { "isort", "black", lsp_format = "fallback" },
 		rust = { "rustfmt", lsp_format = "fallback" },
-		golang = { "gofmt", lsp_format = "fallback" },
+		go = { "goimports", "gofmt", lsp_format = "fallback" },
 		javascript = { "prettierd" }, --
 		javascriptreact = { "prettierd" },
 		typescript = { "prettierd" },

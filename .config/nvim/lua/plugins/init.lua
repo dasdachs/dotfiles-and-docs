@@ -95,6 +95,10 @@ return require("lazy").setup({
 		"windwp/nvim-ts-autotag",
 		opts = {},
 	},
+	{
+		"OXY2DEV/markview.nvim",
+		lazy = false,
+	},
 
 	-- Lsp
 	{ -- collection of lsp setups
@@ -140,13 +144,6 @@ return require("lazy").setup({
 		},
 		config = function()
 			require("plugins.debugger")
-		end,
-	},
-
-	{
-		"stevearc/overseer.nvim",
-		config = function()
-			require("overseer").setup()
 		end,
 	},
 

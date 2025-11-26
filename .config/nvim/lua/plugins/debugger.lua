@@ -30,11 +30,17 @@ require("nvim-dap-virtual-text").setup {
 }
 vim.g.dap_virtual_text = true
 
-vim.keymap.set("n", "<leader>dc", function() dap.continue() end, { desc = "DAP: Type [d]ebuger [c]ontinue" })
-vim.keymap.set("n", "<leader>dr", dap.restart, { desc = "DAP: Type [d]ebuger [r]estart" })
-vim.keymap.set("n", "<leader>dl", function() dap.run_last() end, { desc = "DAP: Type [d]ebuger [l]ast" })
-vim.keymap.set("n", "<leader>db", function() dap.toggle_breakpoint() end,
-  { desc = "DAP: Type [d]ebuger [b]reakpoint toggle" })
+vim.keymap.set("n", "<leader>dc", function() dap.continue() end, { desc = "DAP: Debugger Continue" })
+vim.keymap.set("n", "<leader>dr", dap.restart, { desc = "DAP: Debugger Restart" })
+vim.keymap.set("n", "<leader>dl", function() dap.run_last() end, { desc = "DAP: Debugger Run Last" })
+vim.keymap.set("n", "<leader>db", function() dap.toggle_breakpoint() end, { desc = "DAP: Debugger Breakpoint Toggle" })
+vim.keymap.set("n", "<leader>dB", function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, { desc = "DAP: Debugger Conditional Breakpoint" })
+vim.keymap.set("n", "<leader>dn", function() dap.step_over() end, { desc = "DAP: Debugger Step Over" })
+vim.keymap.set("n", "<leader>di", function() dap.step_into() end, { desc = "DAP: Debugger Step Into" })
+vim.keymap.set("n", "<leader>do", function() dap.step_out() end, { desc = "DAP: Debugger Step Out" })
+vim.keymap.set("n", "<leader>dp", function() dap.pause() end, { desc = "DAP: Debugger Pause" })
+vim.keymap.set("n", "<leader>ds", function() dapui.toggle() end, { desc = "DAP: Debugger UI Toggle" })
+vim.keymap.set("n", "<leader>de", function() require('dapui').eval() end, { desc = "DAP: Debugger Evaluate Expression" })
 
 dap.set_log_level("DEBUG")
 

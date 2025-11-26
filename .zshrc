@@ -28,7 +28,7 @@ plugins=(
 
 # cd Path
 zstyle ':completion:*:complete:(cd|pushd):*' tag-order 'local-directories named-directories'
-cdpath=($HOME/projects/work $HOME/projects/dev)
+cdpath=($HOME/projects/work $HOME/projects/dev $HOME/projects)
 
 # Editor
 export EDITOR=nvim
@@ -60,7 +60,7 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Rust
-source $HOME/.cargo/env 
+source $HOME/.cargo/env
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
