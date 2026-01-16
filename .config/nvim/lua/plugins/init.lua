@@ -8,6 +8,8 @@ return require("lazy").setup({
 			require("sort").setup()
 		end,
 	},
+  -- Themes
+  { "rebelot/kanagawa.nvim" },
 	-- UI
 	{ "norcalli/nvim-colorizer.lua" }, -- fast color support
 	{ "rebelot/kanagawa.nvim" }, -- current theme
@@ -149,10 +151,6 @@ return require("lazy").setup({
 
 	-- Git
 	{ "tpope/vim-fugitive" }, -- Git integration
-	-- {                         -- Git "anotations" for blame etc
-	--   "lewis6991/gitsigns.nvim",
-	--   config = function() require("plugins.gitsigns") end
-	-- },
 
 	-- Terminal
 	{
