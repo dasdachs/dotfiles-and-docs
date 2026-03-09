@@ -12,11 +12,21 @@ vim.lsp.enable("tailwindcss", { capabilities = capabilities })
 -- Golang
 vim.lsp.enable("gopls", { capabilities = capabilities })
 
+-- Python
+vim.lsp.enable("pyerfly", { capabilities = capabilities })
+vim.lsp.enable("python-lsp-server", { capabilities = capabilities })
+
 -- Bash
 vim.lsp.enable("bashls", { capabilities = capabilities })
 
 -- Terraform
 vim.lsp.enable("terraformls", { capabilities = capabilities })
+
+-- Java
+vim.lsp.enable("jdtls", { capabilities = capabilities })
+--
+-- rust
+vim.lsp.enable("rust_analyzer", { capabilities = capabilities })
 
 -- Yaml, toml etc
 vim.lsp.enable("yamlls")
@@ -29,20 +39,20 @@ vim.keymap.set("n", "<leader>gr", require("telescope.builtin").lsp_references, {
 vim.keymap.set("n", "<leader>gI", vim.lsp.buf.implementation, { desc = "LSP: [G]oto [I]mplementation" })
 vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "LSP: Type [D]efinition" })
 vim.keymap.set(
-	"n",
-	"<leader>ds",
-	require("telescope.builtin").lsp_document_symbols,
-	{ desc = "LSP: [D]ocument [S]ymbols" }
+  "n",
+  "<leader>ds",
+  require("telescope.builtin").lsp_document_symbols,
+  { desc = "LSP: [D]ocument [S]ymbols" }
 )
 vim.keymap.set(
-	"n",
-	"<leader>ws",
-	require("telescope.builtin").lsp_dynamic_workspace_symbols,
-	{ desc = "LSP: [W]orkspace [S]ymbols" }
+  "n",
+  "<leader>ws",
+  require("telescope.builtin").lsp_dynamic_workspace_symbols,
+  { desc = "LSP: [W]orkspace [S]ymbols" }
 )
 vim.keymap.set("n", "<leader>h", function()
-	vim.lsp.buf.signature_help()
+  vim.lsp.buf.signature_help()
 end, { desc = "LSP: [h]elp" })
 vim.keymap.set("n", "<leader>e", function()
-	vim.diagnostic.open_float()
+  vim.diagnostic.open_float()
 end, { desc = "LSP: Show [e]rror" })

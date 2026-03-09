@@ -16,6 +16,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 source $ZSH/oh-my-zsh.sh
 
@@ -38,12 +39,12 @@ alias sudo='sudo '
 # Alias
 alias vim=nvim
 alias grep=rg
-alias find=fd
 alias cat=bat
 alias k=kubectl
 alias pbcopy=wl-copy
 alias pbpaste=wl-paste
 alias stow=stow --ignore=".gitignore"
+alias task=go-task
 
 # asdf
 export PATH="$HOME/.asdf/shims:$PATH"
@@ -76,7 +77,7 @@ export KUBECONFIG=/home/janis/.kube/config
 
 # LLMs
 export OLLAMA_API_BASE=http://127.0.0.1:11434
-source ~/.zshrc_keys
+# source ~/.zshrc_keys
 
 # Redis on fedora
 alias redis-cli=valkey-cli
@@ -92,3 +93,15 @@ complete -o nospace -C /usr/bin/terraform terraform
 alias j!=jbang
 export PATH="$HOME/.jbang/bin:$HOME/.jbang/currentjdk/bin:$PATH"
 export JAVA_HOME=$HOME/.jbang/currentjdk
+
+# Load work specific configs
+if [ -f ~/.zsh_work ]; then
+  source ~/.zsh_work
+fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Added by GAIA installer
+export PATH="$PATH:/home/janis/.gaia/venv/bin"
